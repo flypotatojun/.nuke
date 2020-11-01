@@ -1,0 +1,26 @@
+{
+    "All": [
+        "hide_input",
+        "disable",
+        "label",
+        "note_font_size",
+        "mix"
+    ],
+    "Blur": [
+        "size"
+    ],
+    "Grade": [
+        "mix",
+        "white",
+        "multiply",
+        "black",
+        "add"
+    ],
+    "Read": [
+        "file"
+    ],
+    "Write": [
+        "file",
+        "channels"
+    ]
+}

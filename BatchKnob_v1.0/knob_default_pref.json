@@ -1,0 +1,14 @@
+{
+    "Blur": [
+        "size"
+    ],
+    "Grade": [
+        "white",
+        "black"
+    ],
+    "Multi": [
+        "hide_input",
+        "label",
+        "note_font_size"
+    ]
+}

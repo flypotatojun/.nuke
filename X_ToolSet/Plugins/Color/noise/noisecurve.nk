@@ -1,0 +1,34 @@
+ 
+set cut_paste_input [stack 0]
+version 6.0 v5
+push $cut_paste_input
+Multiply {
+value {{"(1*(noise((frame+(timeOffset*100))*freq, (seed*5), 0)*2-1)*amp+(amp*.7))+amount" i}}
+maskChannelMask -rgba.alpha
+name NoiseCurve
+selected true
+xpos 61
+ypos -62
+addUserKnob {20 parameters l Parameters}
+addUserKnob {7 freq l Frequency}
+freq 0.15
+addUserKnob {7 seed l Seed t "\t\t\t\t\t\t" R 0 100}
+seed 2.5
+addUserKnob {7 amp l Amplitude}
+amp 0.5
+addUserKnob {7 timeOffset l "Time Offset" R 0 100}
+addUserKnob {7 amount l Amount}
+amount 0.75
+addUserKnob {26 ""}
+addUserKnob {41 channels_1 l channels T Noise.channels}
+addUserKnob {41 value_1 l value T Noise.value}
+addUserKnob {26 "" l mask T ""}
+addUserKnob {41 maskChannelMask_1 l "" -STARTLINE T Noise.maskChannelMask}
+addUserKnob {41 maskChannelInput_1 l "" -STARTLINE T Noise.maskChannelInput}
+addUserKnob {41 inject_1 l inject -STARTLINE T Noise.inject}
+addUserKnob {41 invert_mask_1 l invert -STARTLINE T Noise.invert_mask}
+addUserKnob {41 fringe_1 l fringe -STARTLINE T Noise.fringe}
+addUserKnob {41 unpremult_1 l "(un)premult by" T Noise.unpremult}
+addUserKnob {41 invert_unpremult_1 l invert -STARTLINE T Noise.invert_unpremult}
+addUserKnob {41 mix_1 l mix T Noise.mix}
+}

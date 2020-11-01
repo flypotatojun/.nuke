@@ -1,0 +1,117 @@
+#! C:/Program Files/Nuke10.0v2/nuke-10.0.2.dll -nx
+version 10.0 v2
+Gizmo {
+ addUserKnob {20 Chormatic_distort l User}
+ addUserKnob {41 Red_translate T Transform2_r.translate}
+ addUserKnob {41 Green_translate T Transform1_g.translate}
+ addUserKnob {41 blue_translate l Blue_translate T Transform3_b.translate}
+ addUserKnob {26 copyrights l "" +STARTLINE T "......................  godwinjeyaseelaraj"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 263
+  ypos -334
+ }
+ Dot {
+  name Dot5
+  xpos 297
+  ypos -294
+ }
+set N555ed800 [stack 0]
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle1
+  tile_color 0xff00ff
+  xpos 153
+  ypos -202
+ }
+ Grade {
+  white {0 1 0 1}
+  white_panelDropped true
+  name Grade3
+  xpos 153
+  ypos -154
+ }
+ Transform {
+  translate {3 0}
+  center {640 540}
+  name Transform1_g
+  xpos 153
+  ypos -112
+ }
+push $N555ed800
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  tile_color 0xff0000ff
+  xpos 263
+  ypos -248
+ }
+ Grade {
+  white {1 0 0 1}
+  white_panelDropped true
+  name Grade4
+  xpos 263
+  ypos -202
+ }
+ Transform {
+  center {640 540}
+  name Transform2_r
+  xpos 263
+  ypos -154
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge3
+  xpos 263
+  ypos -106
+ }
+push $N555ed800
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle3
+  tile_color 0xffff
+  xpos 373
+  ypos -226
+ }
+ Grade {
+  white {0 0 1 1}
+  white_panelDropped true
+  name Grade5
+  xpos 373
+  ypos -154
+ }
+ Transform {
+  center {640 540}
+  name Transform3_b
+  xpos 373
+  ypos -77
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge4
+  selected true
+  xpos 263
+  ypos -28
+ }
+ Output {
+  name Output1
+  xpos 263
+  ypos 58
+ }
+ Output {
+  name Output2
+  xpos 263
+  ypos 158
+ }
+end_group
